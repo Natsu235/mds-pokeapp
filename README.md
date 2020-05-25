@@ -2,8 +2,8 @@
 An Android application displaying informations retrivied from the PokéAPI.
 
 ### Features
-* **listPokedex()** - Retrieve the list of all Pokémon from PokéAPI.
-* **showPokemon()** - Show all informations about a selected Pokémon.
+* **listPokedex()** - Retrieves a list of all Pokémon from PokéAPI.
+* **showPokemon()** - Shows all informations about a selected Pokémon.
 
 ### Miscellaneous
 Documentation of *PokéAPI*: https://pokeapi.co/docs/v2.html/
