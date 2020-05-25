@@ -1,0 +1,13 @@
+Descriptif des objectifs:
+- Réalisation d'une liste de Pokémon (Pokédex) représentée par des photos et triée par ordre alphabétique.
+- Lorsque l'utilisateur choisi un Pokémon en cliquant dessus, une nouvelle fenêtre s'ouvre contenant les
+informations contenant le Pokémon ayant été choisi (nom, abilités, ...).
+
+Réaliser les fonctions suivantes:
+* list() -> Affichera une liste de tous les Pokémon par ordre alphabétique.
+* show() -> Affichera les informations d'un Pokémon ayant été sélectionné par l'utilisateur dans la liste précédemment définie.
+
+Autres:
+Créer le modèle de base pour représenter les Pokémon.
+Utiliser Retrofit pour gérer l'envoi des requêtes HTTP à l'API.
+Utiliser Picasso pour afficher les images dans les ImageView grâce à l'URL du sprite retournée par l'API.
