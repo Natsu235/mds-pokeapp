@@ -1,5 +1,5 @@
 Descriptif des objectifs:
-- Réalisation d'une liste de Pokémon (Pokédex) représentée par des photos et triée par ordre alphabétique.
+- Réalisation d'une liste de Pokémon (Pokédex) représentée par des photos.
 - Lorsque l'utilisateur choisi un Pokémon en cliquant dessus, une nouvelle fenêtre s'ouvre contenant les
 informations contenant le Pokémon ayant été choisi (id, nom, exp, ...).
 
@@ -10,3 +10,4 @@ Réaliser les fonctions suivantes:
 Autres:
 Créer le modèle de base pour représenter les Pokémon.
 Utiliser Retrofit (client HTTP pour Android) permettant de gérer les requêtes HTTP à envoyer à l'API.
+Réalisation d'un RecyclerView sous Android (https://guides.codepath.com/android/using-the-recyclerview).

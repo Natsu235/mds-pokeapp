@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/img_main_brand"
+        android:id="@+id/img_brand"
         android:layout_width="wrap_content"
         android:layout_height="240dp"
         android:layout_marginStart="50dp"
@@ -19,19 +19,22 @@
         app:srcCompat="@drawable/brand" />
 
     <Button
-        android:id="@+id/btn_main_pokedex"
+        android:id="@+id/btn_pokedex"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="50dp"
         android:drawableLeft="@drawable/ic_pokedex"
+        android:drawablePadding="2dip"
         android:onClick="showPokedex"
+        android:paddingLeft="14dip"
+        android:paddingRight="2dip"
         android:text="@string/pokedex"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_main_brand" />
+        app:layout_constraintTop_toBottomOf="@+id/img_brand" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

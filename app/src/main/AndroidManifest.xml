@@ -10,8 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher">
         <activity
+            android:name="fr.mds.pokeapp.PokemonActivity"
+            android:label="@string/pokemon"
+            android:parentActivityName="fr.mds.pokeapp.PokedexActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.mds.pokeapp.PokedexActivity" />
+        </activity>
+        <activity
             android:name="fr.mds.pokeapp.PokedexActivity"
-            android:label="Pokédex Activity"
+            android:label="@string/pokedex"
             android:parentActivityName="fr.mds.pokeapp.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

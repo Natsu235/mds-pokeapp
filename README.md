@@ -1,5 +1,5 @@
 # PokéApp
-An Android application displaying informations about Pokémon using the PokéAPI.
+An Android application displaying informations about Pokémon using the [PokéAPI](https://pokeapi.co/).
 
 ### Features
 * **showPokedex()** - Retrieves a list of all Pokémon from PokéAPI.
