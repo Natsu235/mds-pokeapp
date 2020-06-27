@@ -8,8 +8,8 @@ An Android application displaying informations about Pokémon using the [PokéAP
 <kbd><img width="260" height="530" src="assets/images/PokemonActivity.png" /></kbd>
 
 ### Features
-* **getPokedex()** - Retrieves a list of all Pokémon from PokéAPI (Sprite, ID and Name).
-* **getPokemon()** - Shows all informations about a selected Pokémon (ID, Name, Base Experience, Height and Sprites).
+* **getPokedex()** - Retrieves a list of all Pokémon from PokéAPI (*Sprite*, *Number* and *Name*).
+* **getPokemon()** - Shows all informations about a selected Pokémon (*Number*, *Name*, *Base Experience*, *Height*, *Weight* and *Sprites*).
 
 ### Miscellaneous
 Documentation of *PokéAPI*: https://pokeapi.co/docs/v2.html/

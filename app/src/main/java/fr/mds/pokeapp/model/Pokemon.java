@@ -14,17 +14,20 @@ public class Pokemon implements Serializable {
     private Integer base_experience;
     @SerializedName("height")
     private Integer height;
+    @SerializedName("weight")
+    private Integer weight;
     @SerializedName("sprites")
     private PokemonSprites sprites;
 
     public Pokemon() {
     }
 
-    public Pokemon(Integer id, String name, Integer base_experience, Integer height, PokemonSprites sprites) {
+    public Pokemon(Integer id, String name, Integer base_experience, Integer height, Integer weight, PokemonSprites sprites) {
         this.id = id;
         this.name = name;
         this.base_experience = base_experience;
         this.height = height;
+        this.weight = weight;
         this.sprites = sprites;
     }
 
@@ -33,6 +36,7 @@ public class Pokemon implements Serializable {
     public String getName() { return name; }
     public Integer getBaseExperience() { return base_experience; }
     public Integer getHeight() { return height; }
+    public Integer getWeight() { return weight; }
     public PokemonSprites getSprites() { return sprites; }
 
     // Setters
@@ -40,6 +44,7 @@ public class Pokemon implements Serializable {
     public void setName(String name) { this.name = name; }
     public void setBaseExperience(Integer base_experience) { this.base_experience = base_experience; }
     public void setHeight(Integer height) { this.height = height; }
+    public void setWeight(Integer weight) { this.weight = weight; }
     public void setSprites(PokemonSprites sprites) { this.sprites = sprites; }
 
 }

@@ -1,6 +1,28 @@
 <resources>
+    <!-- Global -->
     <string name="app_name">PokéApp</string>
     <string name="pokedex">Pokédex</string>
     <string name="pokemon">Pokémon</string>
-    <string name="unknown">Inconnu</string>
+    <string name="unknown">Unknown</string>
+    <string name="missingno">MissingNo.</string>
+    <string name="decamark">Decamark</string>
+    <string name="zero">000</string>
+
+    <!-- Pokemon -->
+    <string name="pokemon_number">N°: </string>
+    <string name="pokemon_name">Name: </string>
+    <string name="pokemon_base_exp">Base Exp.: </string>
+    <string name="pokemon_height">Height: </string>
+    <string name="pokemon_weight">Weight: </string>
+    <string name="pokemon_sprites">Sprites: </string>
+
+    <!-- Sprite -->
+    <string name="sprite_front_default">Front Male</string>
+    <string name="sprite_front_female">Front Female</string>
+    <string name="sprite_front_shiny">Front Male Shiny</string>
+    <string name="sprite_front_shiny_female">Front Female Shiny</string>
+    <string name="sprite_back_default">Back Male</string>
+    <string name="sprite_back_female">Back Female</string>
+    <string name="sprite_back_shiny">Back Male Shiny</string>
+    <string name="sprite_back_shiny_female">Back Female Shiny</string>
 </resources>

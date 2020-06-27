@@ -41,14 +41,14 @@ public class PokemonSprites implements Serializable {
     }
 
     // Getters
-    public String getBackDefault() { return back_default; }
-    public String getBackFemale() { return back_female; }
-    public String getBackShiny() { return back_shiny; }
-    public String getBackShinyFemale() { return back_shiny_female; }
-    public String getFrontDefault() { return front_default; }
-    public String getFrontFemale() { return front_female; }
-    public String getFrontShiny() { return front_shiny; }
-    public String getFrontShinyFemale() { return front_shiny_female; }
+    public String getBackDefault() { return (back_default != null ? back_default : DECAMARK_SPRITE); }
+    public String getBackFemale() { return (back_female != null ? back_female : (back_default != null ? back_default : DECAMARK_SPRITE)); }
+    public String getBackShiny() { return (back_shiny != null ? back_shiny : DECAMARK_SPRITE); }
+    public String getBackShinyFemale() { return (back_shiny_female != null ? back_shiny_female : (back_shiny != null ? back_shiny : DECAMARK_SPRITE)); }
+    public String getFrontDefault() { return (front_default != null ? front_default : DECAMARK_SPRITE); }
+    public String getFrontFemale() { return (front_female != null ? front_female : (front_default != null ? front_default : DECAMARK_SPRITE)); }
+    public String getFrontShiny() { return (front_shiny != null ? front_shiny : DECAMARK_SPRITE); }
+    public String getFrontShinyFemale() { return (front_shiny_female != null ? front_shiny_female : (front_shiny != null ? front_shiny : DECAMARK_SPRITE)); }
 
     // Setters
     public void setBackDefault(String back_default) { this.back_default = back_default; }
