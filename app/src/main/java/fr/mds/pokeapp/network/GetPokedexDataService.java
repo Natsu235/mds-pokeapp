@@ -7,6 +7,7 @@ import fr.mds.pokeapp.model.PokedexResult;
 import fr.mds.pokeapp.model.Pokemon;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface GetPokedexDataService {
 
@@ -16,6 +17,6 @@ public interface GetPokedexDataService {
 
     // Get Pokemon
     @GET("pokemon/{name}")
-    Call<Pokemon> getPokemon();
+    Call<Pokemon> getPokemon(@Path("name") String name);
 
 }

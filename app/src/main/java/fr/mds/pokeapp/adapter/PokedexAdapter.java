@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,8 +16,18 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import fr.mds.pokeapp.PokedexActivity;
+import fr.mds.pokeapp.PokemonActivity;
 import fr.mds.pokeapp.R;
+import fr.mds.pokeapp.model.Pokedex;
 import fr.mds.pokeapp.model.PokedexResult;
+import fr.mds.pokeapp.model.Pokemon;
+import fr.mds.pokeapp.model.PokemonSprite;
+import fr.mds.pokeapp.network.GetPokedexDataService;
+import fr.mds.pokeapp.network.RetrofitInstance;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.CustomViewHolder> {
 
@@ -32,30 +43,58 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.CustomVi
         public final View mView;
 
         private ImageView img_pokemon;
-        private TextView tv_pokemon;
+        private TextView tv_pokemon_id;
+        private TextView tv_pokemon_name;
 
         CustomViewHolder(View itemView) {
             super(itemView);
             mView = itemView;
 
             img_pokemon = mView.findViewById(R.id.img_pokemon);
-            tv_pokemon = mView.findViewById(R.id.tv_pokemon);
+            tv_pokemon_id = mView.findViewById(R.id.tv_pokemon_id);
+            tv_pokemon_name = mView.findViewById(R.id.tv_pokemon_name);
         }
     }
 
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_pokemon, parent, false);
-        return new CustomViewHolder(view);
+        View pokemonView = layoutInflater.inflate(R.layout.item_pokemon, parent, false);
+        pokemonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), PokemonActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        return new CustomViewHolder(pokemonView);
     }
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        holder.tv_pokemon.setText(pokemonList.get(position).getName());
+        Integer pokemonId = pokemonList.get(position).getId();
+        String pokemonName = pokemonList.get(position).getName();
 
-        Picasso.Builder builder = new Picasso.Builder(context);
-        Picasso.get().load("https://vignette.wikia.nocookie.net/envision/images/b/b7/Missingno.png/revision/latest?cb=20200111070311").into(holder.img_pokemon);
+        holder.tv_pokemon_id.setText(String.format("%03d", pokemonId));
+        holder.tv_pokemon_name.setText(pokemonName.substring(0, 1).toUpperCase() + pokemonName.substring(1));
+        Picasso.get().load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemonId + ".png").into(holder.img_pokemon);
+
+        //GetPokedexDataService service = RetrofitInstance.getRetrofitInstance().create(GetPokedexDataService.class);
+        //Call<Pokemon> call = service.getPokemon(pokemonName);
+        //call.enqueue(new Callback<Pokemon>() {
+        //    @Override
+        //    public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
+        //        PokemonSprite pokemonSprites = response.body().getSprites();
+        //        Picasso.get().load(pokemonSprites.getFrontDefault()).into(img_pokemon);
+        //    }
+
+        //    @Override
+        //    public void onFailure(Call<Pokemon> call, Throwable t) {
+        //        t.printStackTrace();
+        //        Toast.makeText(context, "Something went wrong... Please try again later.", Toast.LENGTH_SHORT).show();
+        //    }
+        //});
     }
 
     @Override
