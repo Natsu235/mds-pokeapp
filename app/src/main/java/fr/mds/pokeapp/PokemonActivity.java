@@ -3,7 +3,9 @@ package fr.mds.pokeapp;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import retrofit2.Response;
 
 public class PokemonActivity extends AppCompatActivity {
 
+    private ProgressBar sp_pokemon;
     private TextView tv_pokemon_id;
     private TextView tv_pokemon_name;
     private TextView tv_pokemon_base_exp;
@@ -45,6 +48,8 @@ public class PokemonActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String pokemonName = intent.getStringExtra("pokemonName");
 
+        sp_pokemon = (ProgressBar) findViewById(R.id.sp_pokemon);
+        sp_pokemon.setVisibility(View.VISIBLE);
         tv_pokemon_id = (TextView) findViewById(R.id.tv_pokemon_id);
         tv_pokemon_name = (TextView) findViewById(R.id.tv_pokemon_name);
         tv_pokemon_base_exp = (TextView) findViewById(R.id.tv_pokemon_base_exp);
@@ -66,16 +71,19 @@ public class PokemonActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 generateData(response.body());
+                sp_pokemon.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<Pokemon> call, Throwable t) {
                 t.printStackTrace();
                 Toast.makeText(PokemonActivity.this, "Something went wrong... Please try again later.", Toast.LENGTH_SHORT).show();
+                sp_pokemon.setVisibility(View.GONE);
             }
         });
     }
 
+    // Fill PokemonView with response data
     private void generateData(Pokemon pokemon) {
         Integer pokemonId = pokemon.getId();
         String pokemonName = pokemon.getName();
@@ -97,6 +105,12 @@ public class PokemonActivity extends AppCompatActivity {
         Picasso.get().load(pokemonSprites.getFrontFemale()).placeholder(decamarkSprite).error(decamarkSprite).into(img_pokemon_front_female);
         Picasso.get().load(pokemonSprites.getFrontShiny()).placeholder(decamarkSprite).error(decamarkSprite).into(img_pokemon_front_shiny);
         Picasso.get().load(pokemonSprites.getFrontShinyFemale()).placeholder(decamarkSprite).error(decamarkSprite).into(img_pokemon_front_shiny_female);
+    }
+
+    // Show Sprite View
+    public void showSprite(View view) {
+        Intent intent = new Intent(this, SpriteActivity.class);
+        startActivity(intent);
     }
 
 }

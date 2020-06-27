@@ -74,7 +74,7 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.CustomVi
         String pokemonName = pokemonList.get(position).getName();
         String pokemonSprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemonId + ".png";
 
-        holder.tv_pokemon_id.setText(String.format("%03d", pokemonId));
+        holder.tv_pokemon_id.setText("#" + String.format("%03d", pokemonId));
         holder.tv_pokemon_name.setText(pokemonName.substring(0, 1).toUpperCase() + pokemonName.substring(1));
         Picasso.get().load(pokemonSprite).placeholder(decamarkSprite).error(decamarkSprite).into(holder.img_pokemon);
     }

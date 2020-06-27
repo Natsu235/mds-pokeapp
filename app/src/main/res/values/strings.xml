@@ -3,9 +3,12 @@
     <string name="app_name">PokéApp</string>
     <string name="pokedex">Pokédex</string>
     <string name="pokemon">Pokémon</string>
+    <string name="sprite">Sprite</string>
     <string name="unknown">Unknown</string>
+    <string name="wait">Please wait...</string>
     <string name="missingno">MissingNo.</string>
     <string name="decamark">Decamark</string>
+    <string name="number">#</string>
     <string name="zero">000</string>
 
     <!-- Pokemon -->
