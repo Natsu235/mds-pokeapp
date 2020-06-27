@@ -1,10 +1,18 @@
 package fr.mds.pokeapp.model;
 
-public class Pokemon {
+import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
+public class Pokemon implements Serializable {
+
+    @SerializedName("id")
     private int id;
+    @SerializedName("name")
     private String name;
+    @SerializedName("base_experience")
     private int base_experience;
+    @SerializedName("height")
     private int height;
 
     public Pokemon() {

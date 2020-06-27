@@ -10,74 +10,57 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import fr.mds.pokeapp.PokemonActivity;
 import fr.mds.pokeapp.R;
-import fr.mds.pokeapp.model.Pokedex;
+import fr.mds.pokeapp.model.PokedexResult;
 
-public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.ViewHolder> {
+public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.CustomViewHolder> {
 
-    private ImageView img_pokemon;
-    private TextView tv_pokemon;
+    private List<PokedexResult> pokemonList;
+    private Context context;
 
-    // Provide a direct reference to each of the views within a data item
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public PokedexAdapter(Context context, List<PokedexResult> pokemonList) {
+        this.context = context;
+        this.pokemonList = pokemonList;
+    }
 
-        public ViewHolder(View itemView) {
+    class CustomViewHolder extends RecyclerView.ViewHolder {
+        public final View mView;
+
+        private ImageView img_pokemon;
+        private TextView tv_pokemon;
+
+        CustomViewHolder(View itemView) {
             super(itemView);
+            mView = itemView;
 
-            img_pokemon = (ImageView) itemView.findViewById(R.id.img_pokemon);
-            tv_pokemon = (TextView) itemView.findViewById(R.id.tv_pokemon);
+            img_pokemon = mView.findViewById(R.id.img_pokemon);
+            tv_pokemon = mView.findViewById(R.id.tv_pokemon);
         }
     }
 
-    // Store a member variable for the pokemon
-    private List<Pokedex> mPokemons;
-
-    // Pass in the pokedex array into the constructor
-    public PokedexAdapter(List<Pokedex> pokemons) {
-        mPokemons = pokemons;
-    }
-
-    // Usually involves inflating a layout from XML and returning the holder
     @Override
-    public PokedexAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = LayoutInflater.from(context);
-
-        // Inflate the custom layout
-        View pokedexView = inflater.inflate(R.layout.item_pokemon, parent, false);
-        pokedexView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), PokemonActivity.class);
-                v.getContext().startActivity(intent);
-            }
-        });
-
-        // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(pokedexView);
-        return viewHolder;
+    public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.item_pokemon, parent, false);
+        return new CustomViewHolder(view);
     }
 
-    // Involves populating data into the item through holder
     @Override
-    public void onBindViewHolder(PokedexAdapter.ViewHolder viewHolder, int position) {
-        // Get the data model based on position
-        Pokedex pokedex = mPokemons.get(position);
+    public void onBindViewHolder(CustomViewHolder holder, int position) {
+        holder.tv_pokemon.setText(pokemonList.get(position).getName());
 
-        // Set item views based on your views and data model
-        Picasso.get().load(pokedex.getSprite()).into(img_pokemon);
-        tv_pokemon.setText(pokedex.getName());
+        Picasso.Builder builder = new Picasso.Builder(context);
+        Picasso.get().load("https://vignette.wikia.nocookie.net/envision/images/b/b7/Missingno.png/revision/latest?cb=20200111070311").into(holder.img_pokemon);
     }
 
-    // Returns the total count of items in the list
     @Override
     public int getItemCount() {
-        return mPokemons.size();
+        return pokemonList.size();
     }
 
 }

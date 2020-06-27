@@ -1,43 +1,41 @@
 package fr.mds.pokeapp.model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.List;
 
-public class Pokedex {
+import com.google.gson.annotations.SerializedName;
 
-    private int id;
-    private String sprite;
-    private String name;
+public class Pokedex implements Serializable {
+
+    @SerializedName("count")
+    private Integer count;
+    @SerializedName("next")
+    private Integer next;
+    @SerializedName("previous")
+    private Integer previous;
+    @SerializedName("results")
+    private List<PokedexResult> results;
 
     public Pokedex() {
     }
 
-    public Pokedex(int id, String sprite, String name) {
-        this.id = id;
-        this.sprite = sprite;
-        this.name = name;
-    }
-
-    public static ArrayList<Pokedex> createPokedexList(int numPokemons) {
-        ArrayList<Pokedex> pokemons = new ArrayList<Pokedex>();
-        int pokemonId = 0;
-
-        for (int i = 1; i <= numPokemons; i++) {
-            pokemons.add(new Pokedex(pokemonId, "https://vignette.wikia.nocookie.net/envision/images/b/b7/Missingno.png/revision/latest?cb=20200111070311", "Pokémon #" + String.format("%03d", pokemonId)));
-            pokemonId++;
-        }
-
-        pokemonId = 0;
-        return pokemons;
+    public Pokedex(Integer count, Integer next, Integer previous, List<PokedexResult> results) {
+        this.count = count;
+        this.next = next;
+        this.previous = previous;
+        this.results = results;
     }
 
     // Getters
-    public int getId() { return id; }
-    public String getSprite() { return sprite; }
-    public String getName() { return name; }
+    public Integer getCount() { return count; }
+    public Integer getNext() { return next; }
+    public Integer getPrevious() { return previous; }
+    public List<PokedexResult> getResults() { return results; }
 
     // Setters
-    public void setId(int id) { this.id = id; }
-    public void setSprite(String sprite) { this.sprite = sprite; }
-    public void setName(String name) { this.name = name; }
+    public void setCount(Integer count) { this.count = count; }
+    public void setNext(Integer next) { this.next = next; }
+    public void setPrevious(Integer previous) { this.previous = previous; }
+    public void setResults(List<PokedexResult> results) { this.results = results; }
 
 }
