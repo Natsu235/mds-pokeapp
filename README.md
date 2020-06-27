@@ -1,9 +1,15 @@
 # PokéApp
 An Android application displaying informations about Pokémon using the [PokéAPI](https://pokeapi.co/).
 
+<kbd><img width="260" height="530" src="assets/images/MainActivity.png" /></kbd>
+<img />
+<kbd><img width="260" height="530" src="assets/images/PokedexActivity.png" /></kbd>
+<img />
+<kbd><img width="260" height="530" src="assets/images/PokemonActivity.png" /></kbd>
+
 ### Features
-* **showPokedex()** - Retrieves a list of all Pokémon from PokéAPI.
-* **showPokemon()** - Shows all informations about a selected Pokémon.
+* **getPokedex()** - Retrieves a list of all Pokémon from PokéAPI (Sprite, ID and Name).
+* **getPokemon()** - Shows all informations about a selected Pokémon (ID, Name, Base Experience, Height and Sprites).
 
 ### Miscellaneous
 Documentation of *PokéAPI*: https://pokeapi.co/docs/v2.html/

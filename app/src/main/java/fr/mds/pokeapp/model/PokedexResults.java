@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class PokedexResult implements Serializable
+public class PokedexResults implements Serializable
 {
     private Integer id;
     @SerializedName("name")
@@ -12,10 +12,10 @@ public class PokedexResult implements Serializable
     @SerializedName("url")
     private String url;
 
-    public PokedexResult() {
+    public PokedexResults() {
     }
 
-    public PokedexResult(String name, String url) {
+    public PokedexResults(String name, String url) {
         this.id = Integer.parseInt(url.substring(34, url.length() - 1));
         this.name = name;
         this.url = url;

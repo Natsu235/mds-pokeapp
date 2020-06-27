@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +14,7 @@ import java.util.List;
 
 import fr.mds.pokeapp.adapter.PokedexAdapter;
 import fr.mds.pokeapp.model.Pokedex;
-import fr.mds.pokeapp.model.PokedexResult;
-import fr.mds.pokeapp.model.Pokemon;
+import fr.mds.pokeapp.model.PokedexResults;
 import fr.mds.pokeapp.network.GetPokedexDataService;
 import fr.mds.pokeapp.network.RetrofitInstance;
 import retrofit2.Call;
@@ -52,9 +50,9 @@ public class PokedexActivity extends AppCompatActivity {
     }
 
     // Method to generate List of data using RecyclerView with custom adapter
-    private void generateDataList(List<PokedexResult> pokedexResult) {
+    private void generateDataList(List<PokedexResults> pokedexResults) {
         Context context = PokedexActivity.this;
-        PokedexAdapter adapter = new PokedexAdapter(context, pokedexResult);
+        PokedexAdapter adapter = new PokedexAdapter(context, pokedexResults);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         rv_pokedex.setLayoutManager(layoutManager);
         rv_pokedex.setAdapter(adapter);

@@ -1,32 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_pokemon_id_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom:"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="ID:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_pokemon_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_pokemon_id_title"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_pokemon_name_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Abilités:"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Name:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_id_title" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="MissingNo."
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_pokemon_name_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_id" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_base_exp_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Base Exp.:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_name_title" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_base_exp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Unknown"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_pokemon_base_exp_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_name" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_height_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Height:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_base_exp_title" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Unknown"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_pokemon_height_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_base_exp" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_sprites_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Sprites:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_height_title" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_front_default"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Front Male"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_sprites_title" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_front_female"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Front Female"
+        app:layout_constraintStart_toEndOf="@+id/img_pokemon_front_default"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_sprites_title" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_front_shiny"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Front Shiny Male"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_default" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_front_shiny_female"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Front Shiny Female"
+        app:layout_constraintStart_toEndOf="@+id/img_pokemon_front_shiny"
+        app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_female" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_back_default"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Back Male"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_shiny" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_back_female"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Back Female"
+        app:layout_constraintStart_toEndOf="@+id/img_pokemon_back_default"
+        app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_shiny_female" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_back_shiny"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Back Shiny Male"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_pokemon_back_default" />
+
+    <ImageView
+        android:id="@+id/img_pokemon_back_shiny_female"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:tooltipText="Back Shiny Female"
+        app:layout_constraintStart_toEndOf="@+id/img_pokemon_back_shiny"
+        app:layout_constraintTop_toBottomOf="@+id/img_pokemon_back_female" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

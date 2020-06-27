@@ -3,9 +3,11 @@ package fr.mds.pokeapp.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.List;
 
-public class PokemonSprite implements Serializable {
+public class PokemonSprites implements Serializable {
+
+    private final String MISSINGNO_SPRITE = "https://www.pokepedia.fr/images/5/54/Sprite_MissingNo._RV.png";
+    private final String DECAMARK_SPRITE = "https://www.pokepedia.fr/images/f/f7/Sprite_%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F_RS.png";
 
     @SerializedName("back_default")
     private String back_default;
@@ -24,10 +26,10 @@ public class PokemonSprite implements Serializable {
     @SerializedName("front_shiny_female")
     private String front_shiny_female;
 
-    public PokemonSprite() {
+    public PokemonSprites() {
     }
 
-    public PokemonSprite(String back_default, String back_female, String back_shiny, String back_shiny_female, String front_default, String front_female, String front_shiny, String front_shiny_female) {
+    public PokemonSprites(String back_default, String back_female, String back_shiny, String back_shiny_female, String front_default, String front_female, String front_shiny, String front_shiny_female) {
         this.back_default = back_default;
         this.back_female = back_female;
         this.back_shiny = back_shiny;
