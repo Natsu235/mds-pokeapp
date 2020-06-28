@@ -23,6 +23,7 @@ import retrofit2.Response;
 
 public class PokemonActivity extends AppCompatActivity {
 
+    // View Elements
     private ProgressBar sp_pokemon;
     private TextView tv_pokemon_id;
     private TextView tv_pokemon_name;
@@ -38,6 +39,14 @@ public class PokemonActivity extends AppCompatActivity {
     private ImageView img_pokemon_front_shiny;
     private ImageView img_pokemon_front_shiny_female;
     private Drawable decamarkSprite;
+
+    // Pokémon Informations
+    private Integer pokemonId;
+    private String pokemonName;
+    private Integer pokemonBaseExp;
+    private Integer pokemonHeight;
+    private Integer pokemonWeight;
+    private PokemonSprites pokemonSprites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,12 +94,12 @@ public class PokemonActivity extends AppCompatActivity {
 
     // Fill PokemonView with response data
     private void generateData(Pokemon pokemon) {
-        Integer pokemonId = pokemon.getId();
-        String pokemonName = pokemon.getName();
-        Integer pokemonBaseExp = pokemon.getBaseExperience();
-        Integer pokemonHeight = pokemon.getHeight();
-        Integer pokemonWeight = pokemon.getWeight();
-        PokemonSprites pokemonSprites = pokemon.getSprites();
+        pokemonId = pokemon.getId();
+        pokemonName = pokemon.getName();
+        pokemonBaseExp = pokemon.getBaseExperience();
+        pokemonHeight = pokemon.getHeight();
+        pokemonWeight = pokemon.getWeight();
+        pokemonSprites = pokemon.getSprites();
 
         tv_pokemon_id.setText(String.format("%03d", pokemonId));
         tv_pokemon_name.setText(pokemonName.substring(0, 1).toUpperCase() + pokemonName.substring(1));
@@ -110,6 +119,47 @@ public class PokemonActivity extends AppCompatActivity {
     // Show Sprite View
     public void showSprite(View view) {
         Intent intent = new Intent(this, SpriteActivity.class);
+        String pokemonSpriteName = "Sprite";
+        String pokemonSprite = "https://www.pokepedia.fr/images/f/f7/Sprite_%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F_RS.png";
+
+        // Define parameters for selected item
+        switch(view.getId()) {
+            case (R.id.img_pokemon_back_default):
+                pokemonSpriteName = "Back Male";
+                pokemonSprite = pokemonSprites.getBackDefault();
+                break;
+            case (R.id.img_pokemon_back_female):
+                pokemonSpriteName = "Back Female";
+                pokemonSprite = pokemonSprites.getBackFemale();
+                break;
+            case (R.id.img_pokemon_back_shiny):
+                pokemonSpriteName = "Back Shiny Male";
+                pokemonSprite = pokemonSprites.getBackShiny();
+                break;
+            case (R.id.img_pokemon_back_shiny_female):
+                pokemonSpriteName = "Back Shiny Female";
+                pokemonSprite = pokemonSprites.getBackShinyFemale();
+                break;
+            case (R.id.img_pokemon_front_default):
+                pokemonSpriteName = "Front Male";
+                pokemonSprite = pokemonSprites.getFrontDefault();
+                break;
+            case (R.id.img_pokemon_front_female):
+                pokemonSpriteName = "Front Female";
+                pokemonSprite = pokemonSprites.getFrontFemale();
+                break;
+            case (R.id.img_pokemon_front_shiny):
+                pokemonSpriteName = "Front Shiny Male";
+                pokemonSprite = pokemonSprites.getFrontShiny();
+                break;
+            case (R.id.img_pokemon_front_shiny_female):
+                pokemonSpriteName = "Front Shiny Female";
+                pokemonSprite = pokemonSprites.getFrontShinyFemale();
+                break;
+        }
+
+        intent.putExtra("pokemonSpriteName", pokemonSpriteName);
+        intent.putExtra("pokemonSprite", pokemonSprite);
         startActivity(intent);
     }
 

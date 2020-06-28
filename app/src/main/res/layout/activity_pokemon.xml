@@ -185,6 +185,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_front_default"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_sprites_title" />
 
@@ -195,6 +196,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_front_female"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toEndOf="@+id/img_pokemon_front_default"
                 app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_sprites_title" />
 
@@ -205,6 +207,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_front_shiny"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_default" />
 
@@ -215,6 +218,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_front_shiny_female"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toEndOf="@+id/img_pokemon_front_shiny"
                 app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_female" />
 
@@ -225,6 +229,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_back_default"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_shiny" />
 
@@ -235,6 +240,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_back_female"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toEndOf="@+id/img_pokemon_back_default"
                 app:layout_constraintTop_toBottomOf="@+id/img_pokemon_front_shiny_female" />
 
@@ -245,6 +251,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_back_shiny"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_pokemon_back_default" />
 
@@ -255,6 +262,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:tooltipText="@string/sprite_back_shiny_female"
+                android:onClick="showSprite"
                 app:layout_constraintStart_toEndOf="@+id/img_pokemon_back_shiny"
                 app:layout_constraintTop_toBottomOf="@+id/img_pokemon_back_female" />
 

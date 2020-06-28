@@ -26,7 +26,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:drawableLeft="@drawable/ic_pokedex"
-        android:drawablePadding="2dip"
+        android:drawablePadding="0dip"
         android:onClick="showPokedex"
         android:paddingLeft="14dip"
         android:paddingRight="2dip"

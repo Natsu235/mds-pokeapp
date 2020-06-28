@@ -13,6 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher">
         <activity
+            android:name="fr.mds.pokeapp.SpriteActivity"
+            android:label="@string/sprite"
+            android:parentActivityName="fr.mds.pokeapp.SpriteActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.mds.pokeapp.PokemonActivity" />
+        </activity>
+        <activity
             android:name="fr.mds.pokeapp.PokemonActivity"
             android:label="@string/pokemon"
             android:parentActivityName="fr.mds.pokeapp.PokedexActivity" >
