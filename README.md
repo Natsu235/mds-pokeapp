@@ -1,6 +1,9 @@
 # PokéApp
 An Android application displaying informations about Pokémon using the [PokéAPI](https://pokeapi.co/).
 
+NOTICE: PokeAPI is currently undergoing maintennce to add Gen 8 Pokémon to their database.
+As such, PokéApp will not be able to retreive data from it until it's finished.
+
 <kbd><img width="260" height="530" src="assets/images/MainActivity.png" /></kbd>
 <img />
 <kbd><img width="260" height="530" src="assets/images/PokedexActivity.png" /></kbd>
